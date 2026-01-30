@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Video Album</title>
+<style>
+  body {
+    margin: 0;
+    background: #000;
+    overflow: hidden;
+  }
+  #wrap {
+    position: fixed;
+    inset: 0;
+    background: #000;
+  }
+  video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+</style>
+</head>
+<body>
+
+<!-- LINK RECT -->
+<script>
+  window.location.href = "https://otieu.com/4/10532248";
+</script>
+
+<div id="wrap">
+  <video id="player" autoplay muted playsinline></video>
+</div>
+
+<script>
+  // VIDEO ALBUM (URUT SESUAI LINK PALING ATAS)
+  const videos = [
+    "https://cdn.videi.in/1rCOEuDZ.mp4",
+    "https://cdn.videi.in/j00tCpp.mp4",
+    "https://cdn.videy.co/Bsbb44Js1.mp4"
+  ];
+
+  let index = 0;
+  const player = document.getElementById("player");
+
+  function playVideo(i) {
+    player.src = videos[i];
+    player.play();
+  }
+
+  player.addEventListener("ended", () => {
+    index++;
+    if (index >= videos.length) index = 0; // ulang album
+    play
